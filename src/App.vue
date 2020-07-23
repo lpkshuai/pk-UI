@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 按钮测试 -->
     <div class="row">
       <pk-button>default</pk-button>
       <pk-button type="primary">primary</pk-button>
@@ -32,14 +33,40 @@
       <pk-button disabled round plain type="warning">warning</pk-button>
       <pk-button disabled round plain type="danger">danger</pk-button>
     </div>
+    <!-- dialog测试 -->
+    <pk-button round plain @click="fn">显示dialog</pk-button>
+    <pk-dialog title="自定义" width="20%" top="200px" :visible="visible" @close="closeDialog">
+      hahaahh
+      <template v-slot:footer>
+        <pk-button type="primary" @click="hideDialogHandle">确定</pk-button>
+        <pk-button @click="hideDialogHandle">取消</pk-button>
+      </template>
+    </pk-dialog>
+    <!-- <pk-dialog>
+      <template v-slot:title>
+        <h3>我是标题</h3>
+      </template>
+    </pk-dialog> -->
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      visible: false
+    }
+  },
   methods: {
     fn() {
-      console.log('点击了按钮');
+      // console.log(this.$slots);
+      this.visible = true;
+    },
+    hideDialogHandle() {
+      this.visible = false;
+    },
+    closeDialog(val) {
+      this.visible = val;
     }
   }
 };
