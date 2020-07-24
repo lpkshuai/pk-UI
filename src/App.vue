@@ -47,6 +47,11 @@
         <h3>我是标题</h3>
       </template>
     </pk-dialog> -->
+    <!-- input测试 -->
+    <div class="row">
+      <pk-input placeholder="123" type="password" name="password" disabled></pk-input>
+      <pk-input placeholder="123" v-model="username"></pk-input>
+    </div>
   </div>
 </template>
 
@@ -54,7 +59,8 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
+      username: 'haha'
     }
   },
   methods: {
@@ -84,6 +90,6 @@ export default {
 .row {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 </style>
