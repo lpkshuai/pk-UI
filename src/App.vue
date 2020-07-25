@@ -52,6 +52,10 @@
       <pk-input placeholder="123" type="password" name="password" disabled></pk-input>
       <pk-input placeholder="123" v-model="username"></pk-input>
     </div>
+    <!-- switch测试 -->
+    <div class="row">
+      <pk-switch v-model="switchOn" name="switch"></pk-switch>
+    </div>
   </div>
 </template>
 
@@ -60,7 +64,8 @@ export default {
   data() {
     return {
       visible: false,
-      username: 'haha'
+      username: 'haha',
+      switchOn: false
     }
   },
   methods: {
