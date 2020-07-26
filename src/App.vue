@@ -56,6 +56,11 @@
     <div class="row">
       <pk-switch v-model="switchOn" name="switch"></pk-switch>
     </div>
+    <!-- radio测试 -->
+    <div class="row">
+      <pk-radio label="0" v-model="gender">男</pk-radio>
+      <pk-radio label="1" v-model="gender">女</pk-radio>
+    </div>
   </div>
 </template>
 
@@ -65,7 +70,8 @@ export default {
     return {
       visible: false,
       username: 'haha',
-      switchOn: false
+      switchOn: false,
+      gender: '男'
     }
   },
   methods: {
